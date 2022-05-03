@@ -1,0 +1,44 @@
+#quadro
+{
+  min-height: 30vh;
+}
+
+.bg-quadro
+{
+  background-color: #fad6e5;
+  border-radius: 10px;
+
+}
+
+.bg-nota
+{
+  background-color:#FFF500;
+}
+// https://color.adobe.com/pt/explore?page=3
+.btn-circle
+{
+  width: 70px;
+  height: 70px;
+  padding: 9px 14px;
+  border-radius: 60px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.plus-btn
+{
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+}
+
+.categoria-head
+{
+  font-size: 50px;
+  font-weight: 500;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  line-height: 1.3;
+}

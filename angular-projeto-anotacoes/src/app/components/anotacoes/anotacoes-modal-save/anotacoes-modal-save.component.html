@@ -1,0 +1,25 @@
+<div class="modal fade" id="modalUpdateNota" tabindex="-1" aria-labelledby="modalUpdateNotaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalUpdateNotaLabel">Atualize a nota <b>#{{notaEdit.idNota}}</b></h5>
+        </div>
+        <div class="modal-body">
+
+
+                <app-anotacoes-add
+                  [status]="statusEdit"
+                  [notaInsert]="notaEdit"
+                  >
+                  </app-anotacoes-add>
+
+        </div>
+        <!-- <div class="modal-footer">
+
+            <button (click)="cancelUpdate()" type="button" class="btn btn-secondary" data-dismiss="modal" id="btnModalSaveNotaCancel">Cancel</button>
+
+        </div> -->
+      </div>
+    </div>
+  </div>
+

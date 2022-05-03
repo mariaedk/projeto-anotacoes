@@ -1,0 +1,51 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <h2 class="categoria-head mb-3">Suas notas</h2>
+    </div>
+  </div>
+</div>
+<div id="quadro" class="bg-quadro p-5">
+  <div class="row d-flex justify-content-between">
+    <div *ngFor="let nota of listaNotas$ | async" class="card bg-nota mb-2" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"> {{nota.tituloNota | titlecase}}  </h5>
+        <h6 class="card-subtitle mb-2 text-muted"> {{nota.categoria.descricaoCategoria}} </h6>
+        <p class="card-text"> {{nota.textoAnotacao}} </p>
+
+        <button (click)="confirmAction(nota)" class="btn btn-sm btn-success mr-1"
+                data-toggle="modal" data-target="#modalUpdateNota">Update</button>
+
+        <button (click)="confirmAction(nota)" class="btn btn-sm btn-danger"
+                data-toggle="modal" data-target="#modalDeleteNota">Delete</button>
+      </div>
+    </div>
+
+    <div *ngIf="criando$ | async" id="add">
+      <app-anotacoes-add [status]="criado$"></app-anotacoes-add>
+    </div>
+
+  </div>
+</div>
+
+<div class="plus-btn">
+  <button (click)="newNota()" class="btn btn-circle rounded-circle btn-success">
+    +
+  </button>
+</div>
+
+<!-- a div nao é necessaria, apenas spearação -->
+<div id="modal-update-container">
+  <app-anotacoes-modal-save
+  [statusEdit]="monitoraStatusAction$"
+  [notaEdit]="notaAction"
+  ></app-anotacoes-modal-save>
+</div>
+
+<div id="modal-delete-container">
+  <app-anotacoes-modal-delete
+  [statusDelete]="monitoraStatusAction$"
+  [notaDel]="notaAction"
+  ></app-anotacoes-modal-delete>
+</div>
+

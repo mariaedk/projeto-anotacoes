@@ -1,0 +1,19 @@
+<!-- Modal -->
+<div class="modal fade" id="modalDeleteNota" tabindex="-1" aria-labelledby="modalDeleteNotaLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalDeleteNotaLabel">Excluir Nota <b>#{{notaDel.idNota}}</b></h5>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-danger" role="alert">
+          Deseja mesmo deletar o registro <b>{{notaDel.tituloNota}}</b>?
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button (click)="updateStatus(false)" type="button" class="btn btn-secondary" data-dismiss="modal" data-dismiss="modal" >Cancel</button>
+        <button (click)="delete(notaDel.idNota)" type="button" class="btn btn-danger" data-dismiss="modal">Excluir</button>
+      </div>
+    </div>
+  </div>
+</div>

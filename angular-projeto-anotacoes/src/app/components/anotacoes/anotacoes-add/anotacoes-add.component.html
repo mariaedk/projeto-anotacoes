@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-center">
+  <div class="card bg-custom " style="width: 18rem;">
+    <div class="card-body ">
+      <h5 class="card-title">
+        <input type="text"
+              name="tituloAnotacao"
+              id="tituloAnotacao"
+              [(ngModel)]="notaInsert.tituloNota"
+              placeholder="Insira o título da nota"
+              class="form-control">
+              <!-- se o id da nota existe, pode aparecer então -->
+              <span *ngIf="notaInsert.idNota" class="id-hidden">
+                <input type="hidden" name="idNota" [(ngModel)]="notaInsert.idNota">
+              </span>
+      </h5>
+      <h6 class="card-subtitle mb-2 text-muted">
+        <select name="categoria"
+                id="categoria"
+                [(ngModel)]="notaInsert.categoria.idCategoria"
+                class="form-control">
+                <option value="">Categoria...</option>
+          <option *ngFor="let cat of categoriasList | async" value="{{cat.idCategoria}}"> {{cat.descricaoCategoria}} </option>
+        </select>
+
+      </h6>
+      <p class="card-text">
+        <input type="text"
+              name="textoAnotacao"
+              id="textoAnotacao"
+              [(ngModel)]="notaInsert.textoAnotacao"
+              placeholder="Descreva a nota"
+              class="form-control">
+      </p>
+      <button (click)="save()" class="btn btn-sm btn-success mx-1" data-dismiss="modal">Salvar</button>
+      <button (click)="cancel()" class="btn btn-sm btn-danger" data-dismiss="modal">Cancelar</button>
+    </div>
+  </div>
+</div>
