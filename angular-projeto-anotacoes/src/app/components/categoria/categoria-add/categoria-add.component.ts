@@ -24,9 +24,11 @@ export class CategoriaAddComponent implements OnInit {
   save()
   {
     this.categoriaService.postCategoria(this.formCategoria).subscribe(
-      (categoria) => {
+      (categoria) =>
+      {
         if (categoria.idCategoria)
         {
+
           this.formCategoria = categoria;
           this.msgRetorno.next(true);
         }

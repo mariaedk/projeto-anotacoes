@@ -27,15 +27,10 @@
 
     <div class="col">
       <div class="custom-control custom-switch">
-        <input type="checkbox"
-        name="flAtivo"
-        class="custom-control-input"
-        id="flAtivo"
-        [(ngModel)]="formCategoria.flAtivo">
-        <label for="flAtiv" class="custom-control-label">Ativo</label>
+        <input type="checkbox" class="custom-control-input" id="customSwitch1" [(ngModel)]="formCategoria.flAtivo">
+        <label class="custom-control-label" for="customSwitch1">Ativar</label>
       </div>
     </div>
-
     <div class="col">
       <button class="btn btn-sm btn-success" (click)="save()">Salvar</button>
     </div>
